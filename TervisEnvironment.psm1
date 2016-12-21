@@ -13,6 +13,10 @@
 [pscustomobject][ordered]@{
     Name="Infrastructure"
     Prefix="INF"
+},
+[pscustomobject][ordered]@{
+    Name="Zeta"
+    Prefix="ZTA"
 }
 
 function get-TervisEnvironmentPrefix {
