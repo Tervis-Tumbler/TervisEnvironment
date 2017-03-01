@@ -19,12 +19,12 @@
     Prefix="ZTA"
 }
 
-function get-TervisEnvironmentPrefix {
+function Get-TervisEnvironmentPrefix {
     param(
-        [Parameter(Mandatory)][string]$EnvironmentName
+        [Parameter(Mandatory)][string[]]$EnvironmentName
     )
-    $Prefix = $Environments | 
-    where Name -eq $EnvironmentName | 
+    $Prefix = $Environments |
+    where Name -in $EnvironmentName |
     select -ExpandProperty Prefix
 
     if($Prefix) {$Prefix} else { Throw "No Environment prefix found for $EnvironmentName" }
